@@ -1,0 +1,102 @@
+\hypertarget{q2-server_8c}{}\section{q2/q2-\/server.c File Reference}
+\label{q2-server_8c}\index{q2/q2-\/server.\+c@{q2/q2-\/server.\+c}}
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{q2-server_8c_ac0a4ce3bd388c7823743b526e7cb77fb}{I\+P\+\_\+\+P\+R\+O\+T\+O\+C\+OL}~0
+\item 
+\#define \hyperlink{q2-server_8c_a47a4d3bbd05894abbce0ffd1d266aa88}{P\+O\+R\+T\+\_\+\+NO}~15050
+\item 
+\#define \hyperlink{q2-server_8c_a30ba2113ad1b0f91029d017fc988d9af}{N\+E\+T\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}~32
+\item 
+\#define \hyperlink{q2-server_8c_abace6f1e028b11cc237bd95c5dbe451a}{cipher\+Key}~\textquotesingle{}S\textquotesingle{}
+\item 
+\#define \hyperlink{q2-server_8c_a6e618c0ec6ffc8ac4489d11c65a5a67c}{sendrecvflag}~0
+\item 
+\#define \hyperlink{q2-server_8c_a49e1fa6b4860231cbcb87bd74f65569f}{nofile}~\char`\"{}File Not Found!\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{q2-server_8c_a37e9b2e0b0fcbe7d2d5bd9c9467c1fb8}{clear\+Buf} (char $\ast$b)
+\item 
+char \hyperlink{q2-server_8c_a4fc6ad5854f646cf1e284f66e104219f}{Cipher} (char ch)
+\item 
+int \hyperlink{q2-server_8c_a19fc2d7afbfbca5d5b78534e8eeb6b29}{send\+File} (F\+I\+LE $\ast$fp, char $\ast$buf, int s)
+\item 
+int \hyperlink{q2-server_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{q2-server_8c_abace6f1e028b11cc237bd95c5dbe451a}\label{q2-server_8c_abace6f1e028b11cc237bd95c5dbe451a}} 
+\index{q2-\/server.\+c@{q2-\/server.\+c}!cipher\+Key@{cipher\+Key}}
+\index{cipher\+Key@{cipher\+Key}!q2-\/server.\+c@{q2-\/server.\+c}}
+\subsubsection{\texorpdfstring{cipher\+Key}{cipherKey}}
+{\footnotesize\ttfamily \#define cipher\+Key~\textquotesingle{}S\textquotesingle{}}
+
+\mbox{\Hypertarget{q2-server_8c_ac0a4ce3bd388c7823743b526e7cb77fb}\label{q2-server_8c_ac0a4ce3bd388c7823743b526e7cb77fb}} 
+\index{q2-\/server.\+c@{q2-\/server.\+c}!I\+P\+\_\+\+P\+R\+O\+T\+O\+C\+OL@{I\+P\+\_\+\+P\+R\+O\+T\+O\+C\+OL}}
+\index{I\+P\+\_\+\+P\+R\+O\+T\+O\+C\+OL@{I\+P\+\_\+\+P\+R\+O\+T\+O\+C\+OL}!q2-\/server.\+c@{q2-\/server.\+c}}
+\subsubsection{\texorpdfstring{I\+P\+\_\+\+P\+R\+O\+T\+O\+C\+OL}{IP\_PROTOCOL}}
+{\footnotesize\ttfamily \#define I\+P\+\_\+\+P\+R\+O\+T\+O\+C\+OL~0}
+
+\mbox{\Hypertarget{q2-server_8c_a30ba2113ad1b0f91029d017fc988d9af}\label{q2-server_8c_a30ba2113ad1b0f91029d017fc988d9af}} 
+\index{q2-\/server.\+c@{q2-\/server.\+c}!N\+E\+T\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE@{N\+E\+T\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}}
+\index{N\+E\+T\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE@{N\+E\+T\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}!q2-\/server.\+c@{q2-\/server.\+c}}
+\subsubsection{\texorpdfstring{N\+E\+T\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}{NET\_BUF\_SIZE}}
+{\footnotesize\ttfamily \#define N\+E\+T\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE~32}
+
+\mbox{\Hypertarget{q2-server_8c_a49e1fa6b4860231cbcb87bd74f65569f}\label{q2-server_8c_a49e1fa6b4860231cbcb87bd74f65569f}} 
+\index{q2-\/server.\+c@{q2-\/server.\+c}!nofile@{nofile}}
+\index{nofile@{nofile}!q2-\/server.\+c@{q2-\/server.\+c}}
+\subsubsection{\texorpdfstring{nofile}{nofile}}
+{\footnotesize\ttfamily \#define nofile~\char`\"{}File Not Found!\char`\"{}}
+
+\mbox{\Hypertarget{q2-server_8c_a47a4d3bbd05894abbce0ffd1d266aa88}\label{q2-server_8c_a47a4d3bbd05894abbce0ffd1d266aa88}} 
+\index{q2-\/server.\+c@{q2-\/server.\+c}!P\+O\+R\+T\+\_\+\+NO@{P\+O\+R\+T\+\_\+\+NO}}
+\index{P\+O\+R\+T\+\_\+\+NO@{P\+O\+R\+T\+\_\+\+NO}!q2-\/server.\+c@{q2-\/server.\+c}}
+\subsubsection{\texorpdfstring{P\+O\+R\+T\+\_\+\+NO}{PORT\_NO}}
+{\footnotesize\ttfamily \#define P\+O\+R\+T\+\_\+\+NO~15050}
+
+\mbox{\Hypertarget{q2-server_8c_a6e618c0ec6ffc8ac4489d11c65a5a67c}\label{q2-server_8c_a6e618c0ec6ffc8ac4489d11c65a5a67c}} 
+\index{q2-\/server.\+c@{q2-\/server.\+c}!sendrecvflag@{sendrecvflag}}
+\index{sendrecvflag@{sendrecvflag}!q2-\/server.\+c@{q2-\/server.\+c}}
+\subsubsection{\texorpdfstring{sendrecvflag}{sendrecvflag}}
+{\footnotesize\ttfamily \#define sendrecvflag~0}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{q2-server_8c_a4fc6ad5854f646cf1e284f66e104219f}\label{q2-server_8c_a4fc6ad5854f646cf1e284f66e104219f}} 
+\index{q2-\/server.\+c@{q2-\/server.\+c}!Cipher@{Cipher}}
+\index{Cipher@{Cipher}!q2-\/server.\+c@{q2-\/server.\+c}}
+\subsubsection{\texorpdfstring{Cipher()}{Cipher()}}
+{\footnotesize\ttfamily char Cipher (\begin{DoxyParamCaption}\item[{char}]{ch }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{q2-server_8c_a37e9b2e0b0fcbe7d2d5bd9c9467c1fb8}\label{q2-server_8c_a37e9b2e0b0fcbe7d2d5bd9c9467c1fb8}} 
+\index{q2-\/server.\+c@{q2-\/server.\+c}!clear\+Buf@{clear\+Buf}}
+\index{clear\+Buf@{clear\+Buf}!q2-\/server.\+c@{q2-\/server.\+c}}
+\subsubsection{\texorpdfstring{clear\+Buf()}{clearBuf()}}
+{\footnotesize\ttfamily void clear\+Buf (\begin{DoxyParamCaption}\item[{char $\ast$}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{q2-server_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{q2-server_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{q2-\/server.\+c@{q2-\/server.\+c}!main@{main}}
+\index{main@{main}!q2-\/server.\+c@{q2-\/server.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{q2-server_8c_a19fc2d7afbfbca5d5b78534e8eeb6b29}\label{q2-server_8c_a19fc2d7afbfbca5d5b78534e8eeb6b29}} 
+\index{q2-\/server.\+c@{q2-\/server.\+c}!send\+File@{send\+File}}
+\index{send\+File@{send\+File}!q2-\/server.\+c@{q2-\/server.\+c}}
+\subsubsection{\texorpdfstring{send\+File()}{sendFile()}}
+{\footnotesize\ttfamily int send\+File (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{char $\ast$}]{buf,  }\item[{int}]{s }\end{DoxyParamCaption})}
+
